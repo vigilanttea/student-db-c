@@ -27,13 +27,13 @@ void Actions(int choice,BSTNode** root, LLNode** head){
     case 1:{
         printf("\n-----------ADD NEW STUDENT----------\n");
         Student NewStud=Create_student();
-        if(Search_BST(*root,NewStud.id)!=NULL){
-            printf("!ID TAKEN\n");
-            break;
-        }
-        Insert_BST(root, NewStud );
+        if(Search_BST(*root,NewStud.id)==NULL){
+             Insert_BST(root, NewStud );
         Add_LL(head, NewStud);
         printf("\nINSERTED SUCCESS\n");
+            break;
+        }
+       else printf("ID TAKEN\n");
         break;
     }
     case 2:{
